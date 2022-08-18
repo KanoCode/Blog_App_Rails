@@ -10,8 +10,8 @@ class Post < ApplicationRecord
   end
 
   private
+
   def updates_post_counter
     user.increment!(:postsCounter)
   end
-
 end
