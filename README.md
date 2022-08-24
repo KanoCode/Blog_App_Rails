@@ -2,7 +2,7 @@
 
 # Blog_app
 
-![s](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/blog-app/images/blog_app_erd.png?token=GHSAT0AAAAAABUCWVYSDQQ2R3GOHKTB64TIYX3X7EQ)
+![](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/blog-app/images/blog_app_erd.png?token=GHSAT0AAAAAABUCWVYSDQQ2R3GOHKTB64TIYX3X7EQ)
 
 > This is a simple blog application, built with rails 
 
@@ -13,6 +13,7 @@
 - Html
 - CSS
 - Rails
+- Ruby
 
 ## Getting Started
 
@@ -24,7 +25,7 @@ To get a local copy up and running follow these simple example steps.
 - in your terminal run git clone `https://github.com/KanoCode/Blog_App_Rails.git`.
 - go to the repository folder in your code editor
 - run bundle install
-- run npm start
+- run rspec to see the tests
 - enjoy the app
 
 ## Authors
