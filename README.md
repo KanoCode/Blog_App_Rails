@@ -1,8 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Blog_app
+![blog_app_erd](https://user-images.githubusercontent.com/95347844/186439295-783f256d-1da4-4649-8684-aa0d739de83b.png)
 
-![](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/blog-app/images/blog_app_erd.png?token=GHSAT0AAAAAABUCWVYSDQQ2R3GOHKTB64TIYX3X7EQ)
+
 
 > This is a simple blog application, built with rails 
 
