@@ -1,1 +1,8 @@
 <h2> These are all your users</h2>
+
+
+<ul>
+<% @users.each do |user| %>
+    <%= render user %>
+<%end%>
+</ul>

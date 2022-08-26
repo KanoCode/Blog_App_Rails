@@ -1,1 +1,16 @@
 <h2>Hi I am a specific user</h2>
+
+
+
+<%= render @user %>
+
+<div>
+<%= @user.bio%>
+ <% @recent_posts.each do |post| %>
+   <h3> <%= post.title%> </h3>
+     <p><%= post.text%> </p> 
+     <div> <h4>Comments: </h4><%post.commentsCounter%>  <h4>Likes: </h4><%post.likesCounter%> </div>
+ <%end %>
+
+ <button>See all posts </button>
+ </div>
