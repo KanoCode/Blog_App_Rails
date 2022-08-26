@@ -1,1 +1,27 @@
 <h2> These are all posts </h2>
+
+<%= render partial: "users/user", object: @user %>
+
+<% @posts.each do |post| %>
+
+<div>
+      <h5> Post #<%= post.id %> </h5>
+    <h3> <%= post.title %></h3>
+    <p> <%= post.text %> </p>
+</div>
+<ul>
+<% post.recent_comments.each do |comment|%>
+     <li><%= comment.text %></li>
+<%end%>
+ </ul>
+<div>
+<h5>Number of Likes:</h5> <%= post.likesCounter%>
+<h5>Number of comments:</h5> <%= post.commentsCounter%>
+ </div>
+
+
+
+
+
+
+<% end %>

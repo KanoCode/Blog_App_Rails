@@ -1,1 +1,8 @@
-<h1>Hi I am a specific user post </h1>
+<h2><%= @post.title %> </h2>
+
+<p><%= @post.text%> </p>
+
+<% @post.comments.each do |comment|%> 
+<li> <%= comment.text %> </li>
+
+<%end%>
