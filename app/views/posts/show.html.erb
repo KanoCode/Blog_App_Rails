@@ -1,8 +1,12 @@
 <h2><%= @post.title %> </h2>
 
 <p><%= @post.text%> </p>
+<%= link_to 'Comment', new_user_post_comment_path(user_id:@user.id,post_id:@post.id ) %> 
+
+<%= button_to "Like",user_post_likes_path(user_id:@user.id,post_id:@post.id ), params:{like:{post_id:@post.id } }, method: :post %>
 
 <% @post.comments.each do |comment|%> 
 <li> <%= comment.text %> </li>
 
 <%end%>
+
