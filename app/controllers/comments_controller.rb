@@ -4,12 +4,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:post_id])
-
-    @comment = @post.comments.new(text: comment_params[:text], user_id: current_user.id, post_id: @post.id)
-
+    @comment = current_user.comments.new(comment_params)
+    @comment.post_id = params[:post_id]
     if @comment.save
-      redirect_to user_post_path(user_id: current_user.id, id: @post.id)
+      redirect_to user_post_path(user_id: current_user.id, id: @comment.post.id)
     else
       render :new, alert: 'Error occurred, Post not saved'
     end
