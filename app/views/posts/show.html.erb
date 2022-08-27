@@ -1,8 +1,9 @@
 <h2><%= @post.title %> </h2>
 
 <p><%= @post.text%> </p>
-
+<%= link_to 'Comment', new_user_post_comment_path(user_id:@user.id,post_id:@post.id ) %> 
 <% @post.comments.each do |comment|%> 
 <li> <%= comment.text %> </li>
 
 <%end%>
+

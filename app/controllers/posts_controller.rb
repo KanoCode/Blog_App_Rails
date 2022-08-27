@@ -7,21 +7,21 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.new
-    @like = Like.new
+    @user = current_user
   end
 
   def new
     @post =Post.new
-    @params = params
   end
 
   def create
-
-    @post = Post.new(title: params[:post][:title],user_id:params[:id], text: params[:post][:body], postsCounter:0, likesCounter:0)
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new(post_params)
+    @post.likes_counter = 0
+    @post.comments_counter = 0
    
     if @post.save
-      redirect_to user_post_path(id: @post.id, user_id: @post.user_id)
+      redirect_to user_post_path( user_id: @user.id,id: @post.id)
     else
       render :new, alert: 'Error occurred, Post not saved'
     end
@@ -36,6 +36,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.permit(:title,:text,:user_id)
+
+    params.require(:post).permit(:title,:text,:user_id)
   end
 end
