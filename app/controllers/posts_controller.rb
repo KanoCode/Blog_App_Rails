@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post =Post.new
+    @post = Post.new
   end
 
   def create
@@ -19,15 +19,13 @@ class PostsController < ApplicationController
     @post = @user.posts.new(post_params)
     @post.likes_counter = 0
     @post.comments_counter = 0
-   
+
     if @post.save
-      redirect_to user_post_path( user_id: @user.id,id: @post.id)
+      redirect_to user_post_path(user_id: @user.id, id: @post.id)
     else
       render :new, alert: 'Error occurred, Post not saved'
     end
   end
-
-
 
   private
 
@@ -36,6 +34,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title,:text,:user_id)
+    params.require(:post).permit(:title, :text, :user_id)
   end
 end
