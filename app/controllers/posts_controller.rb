@@ -15,10 +15,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.new(post_params)
-    @post.likes_counter = 0
-    @post.comments_counter = 0
 
     if @post.save
       redirect_to user_post_path(user_id: @user.id, id: @post.id)
@@ -34,6 +32,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :text, :user_id)
+    params.require(:post).permit(:title, :text)
   end
 end
