@@ -14,7 +14,7 @@ describe User do
   end
 
   it 'postsCounter must be an integer' do
-    subject.postsCounter = 1
-    expect(subject.postsCounter).to be >= 0
+    subject.posts_counter = 1
+    expect(subject.posts_counter).to be >= 0
   end
 end

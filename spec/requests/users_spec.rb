@@ -15,7 +15,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /user' do
-    before(:example) { get('/users/show') }
+    before(:example) { get('/users/1') }
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
@@ -23,7 +23,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('show')
     end
     it 'template has right placeholder text' do
-      expect(response.body).to include('Hi I am a specific user')
+      expect(response.body).to include('See all posts')
     end
   end
 end

@@ -1,10 +1,10 @@
 require 'rails_helper'
 RSpec.describe 'post_show', type: :feature do
   before(:each) do
-    @author = Author.first
-    @post = Post.first
-    @comment = Comment.first
-    visit "/authors/#{@author.id}/posts/#{@post.id}"
+   @author = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+    @post = Post.create(user_id:@author.id, title: 'Hello', text: 'This is my first post',id:1)
+    # @comment = Comment.first
+    visit "/users/1/posts/1"
   end
   scenario 'can see the post\'s title' do
     expect(page).to have_content(@post.title)

@@ -5,7 +5,8 @@
 <% @posts.each do |post| %>
 
 <div>
-      <h5> Post #<%= post.id %> </h5>
+
+      <h5> <%= link_to "Post##{post.id}", user_post_path(@user.id,post.id)%> </h5>
     <h3> <%= post.title %></h3>
     <p> <%= post.text %> </p>
 </div>

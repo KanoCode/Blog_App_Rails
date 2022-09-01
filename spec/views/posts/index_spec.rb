@@ -1,19 +1,22 @@
 require 'rails_helper'
-RSpec.describe 'post_index', type: :feature do
-  describe 'test for author show' do
+RSpec.feature 'post_index', type: :feature do
+  describe 'test for user show' do
     before(:example) do
-      @author = Author.first
+      @user = User.first
       @post = Post.first
-      visit "/authors/#{@author.id}/posts"
+      visit "/users/#{@user.id}/posts"
     end
+
     scenario 'shows the user\'s profile picture' do
       page.has_selector?('img')
     end
+
     scenario 'can see the user\'s username' do
-      expect(page).to have_content(@author.name.to_s)
+      expect(page).to have_content(@user.name.to_s)
     end
+
     scenario 'can see the user\'s number of posts' do
-      expect(page).to have_content("Number of posts: #{@author.posts_counter}")
+      expect(page).to have_content("Number of posts: #{@user.posts_counter}")
     end
     scenario 'can see the post\'s title' do
       expect(page).to have_content(@post.title)
@@ -35,7 +38,7 @@ RSpec.describe 'post_index', type: :feature do
     end
     scenario 'redirects to the post\'s page when a post is clicked' do
       first('.link').click
-      expect(page.current_path).to eql("/authors/#{@author.id}/posts/#{@post.id}")
+      expect(page.current_path).to eql("/users/#{user.id}/posts/#{@post.id}")
     end
   end
 end
