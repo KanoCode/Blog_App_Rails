@@ -4,7 +4,7 @@ RSpec.describe 'show author tests', type: :feature do
   describe 'test for author show' do
     before(:example) do
       @author = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-      @post = Post.create(user_id:@author.id, title: 'Hello', text: 'This is my first post')
+      @post = Post.create(user_id: @author.id, title: 'Hello', text: 'This is my first post')
       visit "/users/#{@author.id}"
     end
 
@@ -13,7 +13,7 @@ RSpec.describe 'show author tests', type: :feature do
     end
 
     scenario 'I can see the number of posts ' do
-      expect(page).to have_content("Number of posts:1")
+      expect(page).to have_content('Number of posts:1')
     end
 
     # scenario 'I can see the user\'s recent posts' do
@@ -21,7 +21,6 @@ RSpec.describe 'show author tests', type: :feature do
     # end
 
     scenario 'I can see the user username.' do
-      
       expect(page).to have_content(@author.name)
     end
 
@@ -36,7 +35,7 @@ RSpec.describe 'show author tests', type: :feature do
     end
 
     scenario 'When I click to see all posts, it redirects me to the authors posts index page.' do
-       click_link('See all posts')
+      click_link('See all posts')
       expect(page.current_path).to eql("/users/#{@author.id}/posts")
     end
   end

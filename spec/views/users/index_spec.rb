@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Author index page', type: :feature do
   describe 'test for author index' do
     @author = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-    @post = Post.create(user_id:@author.id, title: 'Hello', text: 'This is my first post')
+    @post = Post.create(user_id: @author.id, title: 'Hello', text: 'This is my first post')
     # @author.save
     # @post.save
 
