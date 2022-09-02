@@ -26,6 +26,9 @@ To get a local copy up and running follow these simple example steps.
 - in your terminal run git clone `https://github.com/KanoCode/Blog_App_Rails.git`.
 - go to the repository folder in your code editor
 - run bundle install
+- run `rails db:drop`
+- run `rails db:create`
+- run `rake db:schema:load` 
 - run rspec to see the tests
 - enjoy the app
 
