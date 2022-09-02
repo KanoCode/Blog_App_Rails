@@ -20,12 +20,12 @@ describe User do
   end
 
   it 'likesCounter must be an integer greater than or equal to 0' do
-    subject.commentsCounter = 1
-    expect(subject.commentsCounter).to be >= 0
+    subject.comments_counter = 1
+    expect(subject.comments_counter).to be >= 0
   end
 
   it 'commentsCounter must be an integer greater than or equal to 0' do
-    subject.commentsCounter = 1
-    expect(subject.commentsCounter).to be >= 0
+    subject.comments_counter = 1
+    expect(subject.comments_counter).to be >= 0
   end
 end

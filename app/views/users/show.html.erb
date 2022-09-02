@@ -11,11 +11,14 @@
       <h5> Post #<%= post.id %> </h5>
     <h3> <%= post.title %></h3>
     <p> <%= post.text %> </p>
-     <div> <h4>Comments: </h4><%post.comments_counter%>  <h4>Likes: </h4><%post.likes_counter%> </div>
+     <div> <h4>Comments: </h4><%= post.comments_counter%>  <h4>Likes: </h4><%=post.likes_counter%> </div>
 
 </div>
  
      <%end %>
 
- <button>See all posts </button>
+    <button> <%= link_to 'my posts', user_posts_path(current_user.id),class:'btn'%> </button>
+     <button><%= link_to 'create a post', new_user_post_path(current_user.id), class:'btn'%></button>
+
+ <button > <%= link_to "See all posts", user_posts_path(@user.id), class: 'single_post btn' %> </button>
  </div>
