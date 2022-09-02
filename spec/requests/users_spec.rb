@@ -2,28 +2,19 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    before(:example) { get users_path }
-    it 'is a success' do
-      expect(response).to have_http_status(:ok)
+    it 'returns http success' do
+      get root_path
+      expect(response).to have_http_status(:success)
     end
-    it "renders 'index' template" do
-      expect(response).to render_template('index')
-    end
-    it 'template has right placeholder text' do
-      expect(response.body).to include(' These are all your users')
-    end
-  end
 
-  describe 'GET /user' do
-    before(:example) { get('/users/1') }
-    it 'is a success' do
-      expect(response).to have_http_status(:ok)
+    it 'it renders index template' do
+      get '/users'
+      expect(response).to render_template(:index)
     end
-    it "renders 'show' template" do
-      expect(response).to render_template('show')
-    end
-    it 'template has right placeholder text' do
-      expect(response.body).to include('See all posts')
+
+    it 'it response body includes correct placeholder text.' do
+      get root_path
+      expect(response.body).to include('BlogApp')
     end
   end
 end
