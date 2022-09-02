@@ -35,7 +35,7 @@ RSpec.describe 'show author tests', type: :feature do
     end
 
     scenario 'When I click to see all posts, it redirects me to the authors posts index page.' do
-       click_link('See all posts')
+      click_link('See all posts')
       expect(page.current_path).to eql("/users/#{@author.id}/posts")
     end
   end
