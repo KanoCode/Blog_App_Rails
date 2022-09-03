@@ -9,7 +9,7 @@ gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-#add authorizations using cancancan
+# add authorizations using cancancan
 gem 'cancancan'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
