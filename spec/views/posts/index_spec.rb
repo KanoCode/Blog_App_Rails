@@ -26,7 +26,8 @@ RSpec.feature 'post_index', type: :feature do
       expect(page).to have_content("Likes: #{@post.likes_counter}")
     end
     scenario 'redirects to the post\'s page when a post is clicked' do
-      first('.link').click expect(page.current_path).to eql("/users/#{@author.id}/posts/#{@post.id}")
+      first('.link').click
+      expect(page.current_path).to eql("/users/#{@author.id}/posts/#{@post.id}")
     end
   end
 end
