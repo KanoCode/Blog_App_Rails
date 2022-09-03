@@ -5,11 +5,13 @@
 
 <%= button_to "Like",user_post_likes_path(user_id:@user.id,post_id:@post.id ), params:{like:{post_id:@post.id } }, method: :post %>
 
-<%= button_to "Delete this post",user_post_path(user_id:@user.id,post_id:@post.id ), method: :delete, class:"btn btn-secondary" %>
-
+<%if can? :destroy, @post %>
+    <%= button_to "Delete this post",user_post_path(user_id:@user.id,post_id:@post.id ), method: :delete, class:"btn btn-secondary" %>
+<%end%>
 <% @post.comments.each do |comment|%> 
 <li> <%= comment.text %> </li>
-<%= button_to "Delete",user_post_comment_path(user_id:@user.id,post_id:@post.id,id:comment.id ), method: :delete, class:"btn btn-secondary" %>
-
+<% if can? :destroy, @post %>
+    <%= button_to "Delete",user_post_comment_path(user_id:@user.id,post_id:@post.id,id:comment.id ), method: :delete, class:"btn btn-secondary" %>
+<%end%>
 <%end%>
 

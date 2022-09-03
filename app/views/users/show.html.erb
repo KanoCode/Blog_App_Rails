@@ -17,8 +17,8 @@
  
      <%end %>
 
-    <button> <%= link_to 'my posts', user_posts_path(current_user.id),class:'btn'%> </button>
-     <button><%= link_to 'create a post', new_user_post_path(current_user.id), class:'btn'%></button>
 
- <button > <%= link_to "See all posts", user_posts_path(@user.id), class: 'single_post btn' %> </button>
+     <button> <%= link_to 'my posts', user_posts_path(current_user.id),class:'btn'%> </button>
+     <button><%= link_to 'create a post', new_user_post_path(current_user.id), class:'btn'%></button>
+     <button > <%= link_to "See all posts", user_posts_path(params[:id]), class: 'single_post btn' %> </button>
  </div>
