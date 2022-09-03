@@ -6,7 +6,7 @@
 
 <div>
 
-      <h5> <%= link_to "Post##{post.id}", user_post_path(@user.id,post.id), class:"link"%> </h5>
+      <h5> <%= link_to "Post##{post.id}", user_post_path(@user.id,post.id)%> </h5>
     <h3> <%= post.title %></h3>
     <p> <%= post.text %> </p>
 </div>
@@ -16,13 +16,8 @@
 <%end%>
  </ul>
 <div>
-<h5>Number of Likes: <%= post.likes_counter%></h5> 
-<h5>Number of Comments: <%= post.comments_counter%></h5> 
+<h5>Number of Likes:  <%= post.likes_counter %></h5>
+<h5>Number of comments:<%= post.comments_counter%></h5> 
  </div>
-
-
-
-
-
 
 <% end %>
