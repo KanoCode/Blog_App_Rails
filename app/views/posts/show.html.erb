@@ -9,6 +9,7 @@
 
 <% @post.comments.each do |comment|%> 
 <li> <%= comment.text %> </li>
+<%= button_to "Delete",user_post_comment_path(user_id:@user.id,post_id:@post.id,id:comment.id ), method: :delete, class:"btn btn-secondary" %>
 
 <%end%>
 

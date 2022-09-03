@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
       render :new, alert: 'Error occurred, Post not saved'
     end
   end
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to user_post_path(user_id: params[:user_id], id:params[:id])
+  end
 
   private
 
